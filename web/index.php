@@ -9,13 +9,13 @@
     <a href="blog.php">Blogs</a>
     <h1>Piesakies webināram!</h1>
 
-    <form action="" method="post">
+    <form action="/confirmation.php" method="post">
         <label for="vards">Vārds:</label>
-        <input type="text" name="" id="vards">
+        <input type="text" name="vards" id="vards">
         <br>
         
         <label for="epasts">Epasts:</label>
-        <input type="email" name="" id="epasts">
+        <input type="email" name="epasts" id="epasts">
         <br>
 
         <select name="level">
