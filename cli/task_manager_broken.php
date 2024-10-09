@@ -3,8 +3,9 @@
 class Task {
     private $id;
     private $title;
+    private $description;
 
-    public function __construct($id, $title) {
+    public function __construct($id, $title, $description) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
@@ -33,6 +34,8 @@ function displayAllTasks($tasks) {
         echo "No tasks available.\n";
     } else {
         foreach ($tasks as $task) {
+            var_dump($task);
+            $task->displayTask();
         }
     }
 }
@@ -45,7 +48,7 @@ function createTask(&$tasks) {
     $lastKey = key($tasks);
     $id = $lastKey + 1;
 
-    $tasks[$id] = new Task();
+    $tasks[$id] = new Task($id, $title, $description);
     echo "Task Created.\n";
 }
 
@@ -96,7 +99,7 @@ while (true) {
             updateTask($tasks);
             break;
         case 4:
-            deleteTasks();
+            deleteTasks($tasks);
             break;
         case 5:
             echo "Exiting the application. Goodbye!\n";
